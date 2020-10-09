@@ -1,4 +1,7 @@
-# 0.1.1 
+# 0.1.2
+- Update webview_flutter version
+
+# 0.1.1
 - KopoModel을 반환 하도록 변경 하였습니다.
 
 # 0.1.0 
