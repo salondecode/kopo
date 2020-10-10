@@ -9,7 +9,7 @@ find Korea Postal address
 You should ensure that you add the router as a dependency in your flutter project.
 ```yaml
 dependencies:
- kopo: "^0.1.2"
+ kopo: "^0.1.3"
 ```
 
 ## Setup
