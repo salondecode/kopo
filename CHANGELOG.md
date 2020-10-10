@@ -1,3 +1,6 @@
+# 0.1.3
+- Update package description
+
 # 0.1.2
 - Update webview_flutter version
 

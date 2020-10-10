@@ -1,6 +1,6 @@
 name: kopo
 description: Kopo package can search for Korean postal addresses using the following postal code search services. If necessary, you can use the English address by clicking the View English button.
-version: 0.1.2
+version: 0.1.3
 author: Paul Han <paul@salondecode.io>
 homepage: https://github.com/salondecode/kopo
 
