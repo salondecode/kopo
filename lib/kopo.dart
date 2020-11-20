@@ -55,7 +55,7 @@ class KopoState extends State<Kopo> {
                   //javascript code and handle in Flutter/Dart
                   //like here, the message is just being printed
                   //in Run/LogCat window of android studio
-                  const result =
+                  KopoModel result =
                       KopoModel.fromJson(jsonDecode(message.message));
 
                   if (widget.callback != null) {
