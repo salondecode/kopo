@@ -11,12 +11,13 @@ import 'package:webview_flutter/webview_flutter.dart';
 class Kopo extends StatefulWidget {
   static const String PATH = '/kopo';
 
-  Kopo({
-    Key key,
-    this.title = '주소검색',
-    this.colour = Colors.white,
-    this.apiKey = '',
-  }) : super(key: key);
+  Kopo(
+      {Key key,
+      this.title = '주소검색',
+      this.colour = Colors.white,
+      this.apiKey = '',
+      this.callback})
+      : super(key: key);
 
   @override
   KopoState createState() => KopoState();
@@ -24,6 +25,7 @@ class Kopo extends StatefulWidget {
   final String title;
   final Color colour;
   final String apiKey;
+  final Function callback;
 }
 
 class KopoState extends State<Kopo> {
@@ -53,8 +55,14 @@ class KopoState extends State<Kopo> {
                   //javascript code and handle in Flutter/Dart
                   //like here, the message is just being printed
                   //in Run/LogCat window of android studio
-                  Navigator.pop(
-                      context, KopoModel.fromJson(jsonDecode(message.message)));
+                  KopoModel result =
+                      KopoModel.fromJson(jsonDecode(message.message));
+
+                  if (widget.callback != null) {
+                    widget.callback(result);
+                  }
+
+                  Navigator.pop(context, result);
                 }),
           ]),
           onWebViewCreated: (WebViewController webViewController) async {
