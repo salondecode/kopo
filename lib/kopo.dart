@@ -16,6 +16,7 @@ class Kopo extends StatefulWidget {
       this.title = '주소검색',
       this.colour = Colors.white,
       this.apiKey = '',
+      this.appBar,
       this.callback})
       : super(key: key);
 
@@ -26,6 +27,7 @@ class Kopo extends StatefulWidget {
   final Color colour;
   final String apiKey;
   final Function? callback;
+  final AppBar? appBar;
 }
 
 class _KopoState extends State<Kopo> {
@@ -34,16 +36,17 @@ class _KopoState extends State<Kopo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: widget.colour,
-        title: Text(
-          widget.title,
-          style: TextStyle(
-            color: Colors.black,
+      appBar: widget.appBar ??
+          AppBar(
+            backgroundColor: widget.colour,
+            title: Text(
+              widget.title,
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
+            iconTheme: IconThemeData().copyWith(color: Colors.black),
           ),
-        ),
-        iconTheme: IconThemeData().copyWith(color: Colors.black),
-      ),
       body: WebView(
           initialUrl: 'https://salondecode.github.io/kopo/assets/daum.html',
           javascriptMode: JavascriptMode.unrestricted,
