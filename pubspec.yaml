@@ -7,7 +7,7 @@ author: Paul Han <paul@salondecode.io>
 homepage: https://github.com/salondecode/kopo
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.13.0 <3.0.0"
 
 dependencies:
   flutter:

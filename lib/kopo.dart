@@ -12,7 +12,7 @@ class Kopo extends StatefulWidget {
   static const String PATH = '/kopo';
 
   Kopo(
-      {Key key,
+      {Key? key,
       this.title = '주소검색',
       this.colour = Colors.white,
       this.apiKey = '',
@@ -20,16 +20,16 @@ class Kopo extends StatefulWidget {
       : super(key: key);
 
   @override
-  KopoState createState() => KopoState();
+  _KopoState createState() => _KopoState();
 
   final String title;
   final Color colour;
   final String apiKey;
-  final Function callback;
+  final Function? callback;
 }
 
-class KopoState extends State<Kopo> {
-  WebViewController _controller;
+class _KopoState extends State<Kopo> {
+  late WebViewController _controller;
   WebViewController get controller => _controller;
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class KopoState extends State<Kopo> {
                       KopoModel.fromJson(jsonDecode(message.message));
 
                   if (widget.callback != null) {
-                    widget.callback(result);
+                    widget.callback!(result);
                   }
 
                   Navigator.pop(context, result);

@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kopo/kopo.dart';
@@ -35,15 +33,17 @@ class _RootPageState extends State<RootPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          FlatButton(
+          TextButton(
             child: Text('find Korea Postal address'),
             onPressed: () async {
-              KopoModel model = await Navigator.push(
+              KopoModel? model = await Navigator.push(
                 context,
                 CupertinoPageRoute(
                   builder: (context) => Kopo(),
                 ),
               );
+              if (model == null) return print('Result is empty');
+
               print(model.toJson());
               setState(() {
                 addressJSON =
@@ -52,6 +52,7 @@ class _RootPageState extends State<RootPage> {
             },
           ),
           Text('$addressJSON'),
+          Container(),
         ],
       ),
     );
