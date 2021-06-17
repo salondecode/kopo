@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:kopo/kopo.dart';
 
 void main() {
-  Widget createWidgetForTesting({Widget child}) {
+  Widget createWidgetForTesting({Widget? child}) {
     return MaterialApp(
       home: child,
     );
