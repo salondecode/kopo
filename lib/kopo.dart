@@ -11,23 +11,23 @@ import 'package:webview_flutter/webview_flutter.dart';
 class Kopo extends StatefulWidget {
   static const String PATH = '/kopo';
 
-  Kopo(
-      {Key? key,
-      this.title = '주소검색',
-      this.colour = Colors.white,
-      this.apiKey = '',
-      this.appBar,
-      this.callback})
-      : super(key: key);
-
-  @override
-  _KopoState createState() => _KopoState();
-
   final String title;
   final Color colour;
   final String apiKey;
   final Function? callback;
-  final AppBar? appBar;
+  final PreferredSizeWidget? appBar;
+
+  Kopo({
+    Key? key,
+    this.title = '주소검색',
+    this.colour = Colors.white,
+    this.apiKey = '',
+    this.appBar,
+    this.callback,
+  }) : super(key: key);
+
+  @override
+  _KopoState createState() => _KopoState();
 }
 
 class _KopoState extends State<Kopo> {
